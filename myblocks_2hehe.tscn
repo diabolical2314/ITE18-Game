@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6nhvkh11r3ny"]
+
+[ext_resource type="PackedScene" uid="uid://bufcc66fn84kt" path="res://Assets/myblocks2.glb" id="1_cu1ie"]
+
+[node name="myblocks2" instance=ExtResource("1_cu1ie")]
+
+[node name="CollisionShape3D" parent="Block/Block/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1.21, 0, 0, 0, 1.2, 0, 0, 0)
+
+[node name="HalfBlock" parent="." index="3"]
+transform = Transform3D(0.999674, 0, 0.0255488, 0, 1, 0, -0.0255488, 0, 0.999674, -6.65997, 0.101972, -0.045267)
+
+[node name="CollisionShape3D" parent="BlockWall/BlockWall/StaticBody3D" index="0"]
+transform = Transform3D(1.17868, 0, 0, 0, 1.11671, -0.0415019, 0, 0.0395622, 1.17146, -0.0803306, 0.114646, -0.0184309)
+
+[node name="BlockWallCorner" parent="BlockWallCorner" index="0"]
+transform = Transform3D(0.998567, 0, -0.0535211, 0, 1, 0, 0.0535211, 0, 0.998567, 0, 0, 0)

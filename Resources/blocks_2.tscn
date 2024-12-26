@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://vbdh10kyg0qu"]
+
+[ext_resource type="PackedScene" uid="uid://djrlew754fdeu" path="res://Assets/blocks2.glb" id="1_3jsva"]
+
+[node name="blocks2" instance=ExtResource("1_3jsva")]
+
+[node name="Block" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4153, 0, 0)
+
+[node name="Block" parent="Block" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="Block/Block" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0110359, -2.38419e-07, 0.00819588)
+
+[node name="Ramptop" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6525, 0.0823741, 0)
+
+[node name="Ramptop" parent="Ramptop" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="Ramptop/Ramptop" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125505, 0)
+
+[node name="RampBottom" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2415, 0.102018, 0.131958)
+
+[node name="RampBottom" parent="RampBottom" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="RampBottom/RampBottom" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0240908, 0.0566311, 0.00804257)
+
+[node name="HalfBlock" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.66976, 0.101972, -0.045267)
+
+[node name="HalfBlock" parent="HalfBlock" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="HalfBlock/HalfBlock" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00620496, 0.0541841, 0)
+
+[node name="EdgeBlock" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0620115, 0.161137, -0.0329615)
+
+[node name="EdgeBlock" parent="EdgeBlock" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="BlockWall" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.6326, 1.08441, 0.34387)
+
+[node name="BlockWall" parent="BlockWall" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="BlockWallCorner" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.04777, 0.813197, 0.0675496)
+
+[node name="BlockWallCorner" parent="BlockWallCorner" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

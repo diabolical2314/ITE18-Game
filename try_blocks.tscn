@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://brfcm1t7aoml5"]
+
+[ext_resource type="PackedScene" uid="uid://dr30oeaecgori" path="res://Resources/TryBlocks.glb" id="1_7gta1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5jfec"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bb143"]
+
+[node name="TryBlocks" instance=ExtResource("1_7gta1")]
+
+[node name="block-colononly" parent="block" index="0"]
+mesh = SubResource("BoxMesh_5jfec")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="block" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block/StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_bb143")

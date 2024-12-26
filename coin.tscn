@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://l6vpervb0lo8"]
+
+[ext_resource type="Script" path="res://coin.gd" id="1_vagr8"]
+[ext_resource type="ArrayMesh" uid="uid://b3x30fj6mvmtj" path="res://Assets/mesh1.res" id="2_x0lmc"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g0bq0"]
+height = 0.379541
+radius = 0.575654
+
+[sub_resource type="Animation" id="Animation_xyv0l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oj5qp"]
+resource_name = "coinbounce"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2.9713, 0), Vector3(0, 2.9713, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nl6l4"]
+_data = {
+"RESET": SubResource("Animation_xyv0l"),
+"coinbounce": SubResource("Animation_oj5qp")
+}
+
+[node name="Coin" type="Area3D"]
+transform = Transform3D(0.75315, 0, 0, 0, 0.79054, 0, 0, 0, 0.774962, 0, 0.511762, -0.142643)
+collision_layer = 4
+script = ExtResource("1_vagr8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.000348969, 1, 0, -1, -0.000348969, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("2_x0lmc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.00114552, 0.994444, 0, -0.994444, -0.00114552, 0, 0, 0, 0.994445, 0, 0, 0)
+shape = SubResource("CylinderShape3D_g0bq0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nl6l4")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
